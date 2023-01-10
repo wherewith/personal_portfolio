@@ -5,10 +5,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
-@app.route('/projects')
+@app.route('/projects/')
 def projects_page():
     return render_template("projects.html")
-@app.route('/contact')
+@app.route('/contact/')
 def contact_page():
     return render_template("contact.html")
 
