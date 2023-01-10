@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav">
                 {% for href, id, caption in navigation_bar %}
-                <li{% if id == active_page %} class="active"{% endif %}><a class="nav-link" href="{{ href|e }}">{{ caption|e }}</a></li>
+                <li><a{% if id==active_page %} class="nav-link active" {% else %} class = "nav-link" {% endif %} href="{{href|e}}">{{caption|e}}</a></li>
                 {% endfor %}
             </ul>
         </div>
