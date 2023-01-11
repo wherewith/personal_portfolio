@@ -1,9 +1,6 @@
 :root {
     --main-color:#9dfcc7;
-}
-
-.unclickable {
-    pointer-events: none;
+    --main-color-a:#9dfcc722;
 }
 
 .navbar {
@@ -23,6 +20,24 @@
 .nav-logo:hover {
     transform: rotate(-7.5deg) scale(110%);
     transition: .2s ease-out; /* as mouse enters */
+}
+.nav-brand-text {
+    position: relative;
+    text-decoration: none;
+}
+.nav-brand-text::before {
+    content: '';
+    background:var(--main-color-a);
+    inset: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s ease-in-out;
+    z-index: 1;
+}
+.nav-brand-text:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .nav-link {
