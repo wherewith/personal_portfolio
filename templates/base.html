@@ -13,20 +13,22 @@
 </head>
 <body>
 {% set navigation_bar = [
-    ('/', 'index', 'Home'),
+    ('/', 'index', 'About Me'),
     ('/projects/', 'projects', 'My Projects'),
     ('/contact/', 'contact', 'Contact Me')
 ] -%}
 <nav class="navbar navbar-expand-sm bg-dark py-2 py-lg-3" data-bs-theme="dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="/static/assets/kj logo - thick mint.svg" width=30 height=30 class="nav-logo d-inline-block align-top me-1" alt="Home">
-            <span class="nav-brand-text">Kunal Jain</span>
+            <img src="/static/assets/kj logo - thick mint.svg" width=45 height=45 class="nav-logo d-inline-block align-top" alt="Home">
+<!--            <span class="nav-brand-text">Kunal Jain</span>-->
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler collapsed d-flex d-sm-none flex-column justify-content-around" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon top-bar"></span>
+            <span class="toggler-icon mid-bar"></span>
+            <span class="toggler-icon bot-bar"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <ul class="navbar-nav">
                 {% for href, id, caption in navigation_bar %}
                 <li><a{% if id==active_page %} class="nav-link active" {% else %} class = "nav-link" {% endif %} href="{{href|e}}">{{caption|e}}</a></li>

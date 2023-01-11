@@ -1,6 +1,6 @@
 :root {
     --main-color:#9dfcc7;
-    --main-color-a:#9dfcc7BB;
+    --main-color-a:#9dfcc7CC;
 }
 
 .navbar {
@@ -18,29 +18,8 @@
     transition: .2s ease-in; /* as mouse leaves */
 }
 .nav-logo:hover {
-    transform: rotate(-7.5deg) scale(110%);
+    transform: rotate(-7.5deg) scale(120%);
     transition: .2s ease-out; /* as mouse enters */
-}
-
-.nav-brand-text:after {
-    content: '';
-    margin-left: .4em;
-}
-.nav-brand-text:hover::after {
-    content: '';
-    width: .3em;
-    height: .9em;
-    background: var(--main-color-a);
-    margin-left: .1em;
-    vertical-align: middle;
-    display: inline-block;
-    animation: cursor-blink 1.5s steps(2,start) infinite;
-}
-
-@keyframes cursor-blink {
-    to {
-        visibility: hidden;
-    }
 }
 
 .nav-link {
@@ -78,6 +57,64 @@
         transform: translate(-50%); /* centers element */
         opacity: 0;
     }
+}
+
+.navbar-toggler {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    transition: .5s ease-in-out;
+}
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    border: 0;
+    box-shadow: none;
+}
+.navbar-toggler span {
+    margin: 0;
+    padding: 0;
+}
+.toggler-icon {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--main-color);
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0);
+    transition: .25s ease-in-out;
+}
+/* navbar toggle when open (X) */
+.navbar-toggler .top-bar {
+    margin-top: 0;
+    transform: rotate(135deg);
+}
+.navbar-toggler .mid-bar {
+    margin-top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.navbar-toggler .bot-bar {
+    margin-top: 0;
+    transform: rotate(-135deg);
+}
+/* navbar toggle when closed (Hamburger) */
+.navbar-toggler.collapsed .top-bar {
+    margin-top: -20px;
+    transform: rotate(0);
+}
+.navbar-toggler.collapsed .mid-bar {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.navbar-toggler.collapsed .bot-bar {
+    margin-top: 20px;
+    transform: rotate(0);
 }
 
 .body-content {
