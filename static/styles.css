@@ -1,5 +1,6 @@
 :root {
     --main-color:#9dfcc7;
+    --main-color-a:#9dfcc7BB;
 }
 
 .navbar {
@@ -29,16 +30,17 @@
     content: '';
     width: .3em;
     height: .9em;
-    background: var(--main-color);
+    background: var(--main-color-a);
     margin-left: .1em;
     vertical-align: middle;
     display: inline-block;
-    animation: cursor-blink 1.5s steps(2) infinite;
+    animation: cursor-blink 1.5s steps(2,start) infinite;
 }
+
 @keyframes cursor-blink {
-  0% {
-    opacity: 0;
-  }
+    to {
+        visibility: hidden;
+    }
 }
 
 .nav-link {
