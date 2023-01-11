@@ -1,10 +1,30 @@
 :root {
     --main-color:#9dfcc7;
 }
-.navbar-brand {
+
+.unclickable {
     pointer-events: none;
+}
+
+.navbar {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.navbar-brand {
     font-weight: 500;
 }
+
+.nav-logo {
+    position: relative;
+    -webkit-backface-visibility: hidden; /* webkit anti alias*/
+    transition: .2s ease-in; /* as mouse leaves */
+}
+.nav-logo:hover {
+    transform: rotate(-7.5deg) scale(110%);
+    transition: .2s ease-out; /* as mouse enters */
+}
+
 .nav-link {
     font-weight: 500;
     position: relative;
@@ -40,4 +60,9 @@
         transform: translate(-50%); /* centers element */
         opacity: 0;
     }
+}
+
+.body-content {
+    padding-left: 10%;
+    padding-right: 10%;
 }
