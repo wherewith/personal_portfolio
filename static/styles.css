@@ -1,6 +1,7 @@
 :root {
-    --main-color:#9dfcc7;
-    --main-color-a:#9dfcc7CC;
+    --color-main:#9dfcc7;
+    --color-main-a:#9dfcc7CC;
+    --color-background:#f5f8fa;
 }
 
 .navbar {
@@ -39,7 +40,7 @@
         display: block;
         width: 100%;
         height: 2px;
-        background-color: var(--main-color);
+        background-color: var(--color-main);
         bottom: 0;
         left: 0;
         transform: scaleX(0);
@@ -51,7 +52,7 @@
         display: block;
         width: 85%;
         height: 2px;
-        background-color: var(--main-color);
+        background-color: var(--color-main);
         bottom: 0;
         left: 50%;
         transform: translate(-50%); /* centers element */
@@ -82,7 +83,7 @@
     position: absolute;
     height: 2px;
     width: 100%;
-    background: var(--main-color);
+    background: var(--color-main);
     border-radius: 2px;
     opacity: 1;
     left: 0;
@@ -117,7 +118,44 @@
     transform: rotate(0);
 }
 
+#loading-container-wrap {
+    height: 150px;
+    width: 150px;
+    position: relative;
+}
+#Flask {
+    display: block;
+    height: 100%;
+    width: 100%;;
+    position: absolute;
+    fill:var(--color-background);
+}
+#loading-fluid {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: #000;
+    overflow: hidden;
+}
+#loading-fluid::before {
+    content: '';
+    position: absolute;
+    background: var(--color-main);
+    width: 100%;
+    bottom: 0;
+    animation: wipe 1.5s cubic-bezier(.42,.14,.9,.71) forwards;
+}
+@keyframes wipe {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+}
+
 .body-content {
     padding-left: 10%;
     padding-right: 10%;
+    background: var(--color-background);
 }
